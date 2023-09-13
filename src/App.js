@@ -1,7 +1,24 @@
 import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const [text, setText] = useState('');
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('/api/text');
+        const data = await response.json();
+        setText(data.text);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchData();
+  }, []);
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +35,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <h1>Texto de la API:</h1>
+      <p>{text}</p>
     </div>
   );
 }
