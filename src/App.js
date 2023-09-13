@@ -32,9 +32,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React {text}
+          Learn React
         </a>
       </header>
+      <h1>Texto de la API:</h1>
+      <p>{text}</p>
     </div>
   );
 }
