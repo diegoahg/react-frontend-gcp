@@ -35,8 +35,8 @@ function App() {
           Learn React
         </a>
       </header>
-      <h1>Texto de la API:</h1>
-      <p>{text}</p>
+      {/* <h1>Texto de la API:</h1>
+      <p>{text}</p> */}
     </div>
   );
 }
